@@ -1,4 +1,0 @@
-package com.example.demo.modelos;
-
-public class Modelo {
-}
