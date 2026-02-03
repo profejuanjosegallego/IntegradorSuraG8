@@ -1,5 +1,5 @@
 package com.example.demo.repositorios;
-import com.example.demo.model.Asistencia;
+import com.example.demo.modelos.Asistencia;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.query.Procedure;
 import org.springframework.data.repository.query.Param;
