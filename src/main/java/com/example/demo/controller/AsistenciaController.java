@@ -1,0 +1,44 @@
+package com.example.demo.controller;
+
+import com.example.APISURAG8ASISTENCIA.model.Asistencia;
+import com.example.APISURAG8ASISTENCIA.service.AsistenciaService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/asistencias")
+@CrossOrigin(origins = "*")
+public class AsistenciaController {
+
+    private final AsistenciaService service;
+
+    public AsistenciaController(AsistenciaService service) {
+        this.service = service;
+    }
+
+    @PostMapping
+    public ResponseEntity<?> crear(@RequestBody Asistencia asistencia) {
+        try {
+            return ResponseEntity.status(HttpStatus.CREATED).body(service.crear(asistencia));
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
+
+    @GetMapping
+    public ResponseEntity<List<Asistencia>> listar() {
+        return ResponseEntity.ok(service.obtenerTodas());
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<?> buscarPorId(@PathVariable Integer id) {
+        try {
+            return ResponseEntity.ok(service.obtenerPorId(id));
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+        }
+    }
+}
