@@ -1,7 +1,7 @@
 package com.example.demo.controller;
 
-import com.example.APISURAG8ASISTENCIA.model.Asistencia;
-import com.example.APISURAG8ASISTENCIA.service.AsistenciaService;
+import com.example.demo.model.Asistencia;
+import com.example.demo.service.AsistenciaService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
