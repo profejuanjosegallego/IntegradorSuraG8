@@ -1,5 +1,7 @@
 package com.example.demo.servicios;
 
+import com.example.demo.modelos.Notificacion;
+import com.example.demo.repositorios.IRepositorioNotificacion;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

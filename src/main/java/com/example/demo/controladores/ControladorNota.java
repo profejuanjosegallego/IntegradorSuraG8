@@ -1,7 +1,8 @@
 package com.example.demo.controladores;
 
-import com.example.APISURAG8NOTAS.modelos.Nota;
-import com.example.APISURAG8NOTAS.servicios.ServicioNota;
+
+import com.example.demo.modelos.Nota;
+import com.example.demo.servicios.ServicioNota;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

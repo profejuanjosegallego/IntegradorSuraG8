@@ -6,31 +6,7 @@ import java.time.LocalTime;
 
 @Entity
 @Table(name = "asistencia")
-@NamedStoredProcedureQueries({
-        @NamedStoredProcedureQuery(
-                name = "Asistencia.crear",
-                procedureName = "crear_asistencia",
-                parameters = {
-                        @StoredProcedureParameter(mode = ParameterMode.IN, name = "nombre", type = String.class),
-                        @StoredProcedureParameter(mode = ParameterMode.IN, name = "fecha", type = LocalDate.class),
-                        @StoredProcedureParameter(mode = ParameterMode.IN, name = "hora", type = LocalTime.class),
-                        @StoredProcedureParameter(mode = ParameterMode.IN, name = "asistio", type = Boolean.class)
-                }
-        ),
-        @NamedStoredProcedureQuery(
-                name = "Asistencia.listar",
-                procedureName = "listar_asistencias",
-                resultClasses = Asistencia.class
-        ),
-        @NamedStoredProcedureQuery(
-                name = "Asistencia.buscarPorId",
-                procedureName = "buscar_asistencia_por_id",
-                parameters = {
-                        @StoredProcedureParameter(mode = ParameterMode.IN, name = "pid", type = Integer.class)
-                },
-                resultClasses = Asistencia.class
-        )
-})
+
 public class Asistencia {
 
     @Id

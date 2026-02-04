@@ -1,17 +1,16 @@
 package com.example.demo.controladores;
 
-
-import com.example.APPISURAG8CLASENOTIFICACIONES.modelos.Notificacion;
-import com.example.APPISURAG8CLASENOTIFICACIONES.servicios.ServicioNotificacion;
-import jakarta.persistence.Id;
+import com.example.demo.modelos.Notificacion;
+import com.example.demo.servicios.ServicioNotificacion;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/apisura8/v1/profesores")
-public class ControladorNotificaciones {
+@RequestMapping("/apisura8/v1/notificacion")
+
+public class ControladorNotificacion {
 
     //Inyectamos la dependencia
     @Autowired
@@ -55,5 +54,5 @@ public class ControladorNotificaciones {
                     .body(error.getMessage());
         }
     }
-}
 
+}

@@ -1,7 +1,7 @@
 package com.example.demo.controladores;
 
 import com.example.demo.modelos.Asistencia;
-import com.example.demo.servicios.AsistenciaService;
+import com.example.demo.servicios.ServicioAsistencia;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,11 +11,11 @@ import java.util.List;
 @RestController
 @RequestMapping("/asistencias")
 @CrossOrigin(origins = "*")
-public class AsistenciaController {
+public class ControladorAsistencia {
 
-    private final AsistenciaService service;
+    private final ServicioAsistencia service;
 
-    public AsistenciaController(AsistenciaService service) {
+    public ControladorAsistencia(ServicioAsistencia service) {
         this.service = service;
     }
 

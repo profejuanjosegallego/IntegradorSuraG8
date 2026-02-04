@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 @Entity
 @Table(name="notificaciones")
 
-public class ModeloNotificacion {
+public class Notificacion {
 
     @Id  //todas las anotaciones van encima de lo que quiero resaltar
     @GeneratedValue(strategy = GenerationType.IDENTITY)

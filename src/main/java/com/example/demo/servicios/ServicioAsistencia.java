@@ -2,19 +2,17 @@ package com.example.demo.servicios;
 
 
 import com.example.demo.modelos.Asistencia;
-import com.example.demo.repositorios.AsistenciaRepository;
+import com.example.demo.repositorios.IRepositorioAsistencia;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class AsistenciaService {
+public class ServicioAsistencia {
 
-    private final AsistenciaRepository repository;
-
-    public AsistenciaService(AsistenciaRepository repository) {
-        this.repository = repository;
-    }
+    @Autowired
+    private IRepositorioAsistencia repository;
 
     public Asistencia crear(Asistencia asistencia) {
 
@@ -22,22 +20,17 @@ public class AsistenciaService {
             throw new IllegalArgumentException("El nombre es obligatorio");
         }
 
-        repository.crearAsistencia(
-                asistencia.getNombrePersona(),
-                asistencia.getFecha(),
-                asistencia.getHoraEntrada(),
-                asistencia.getAsistio()
-        );
+        repository.save(asistencia);
 
         return asistencia;
     }
 
     public List<Asistencia> obtenerTodas() {
-        return repository.listarAsistencias();
+        return repository.findAll();
     }
 
     public Asistencia obtenerPorId(Integer id) {
-        Asistencia a = repository.buscarPorId(id);
+        Asistencia a = repository.getById(id);
         if (a == null) {
             throw new RuntimeException("Asistencia no encontrada");
         }
