@@ -43,7 +43,7 @@ public class ControladorMatricula {
         }
     }
 
-    @GetMapping("{/id}")
+    @GetMapping("/{id}")
     public ResponseEntity<?> controladorBuscarPorId(@PathVariable Integer id){
         try{
             return ResponseEntity

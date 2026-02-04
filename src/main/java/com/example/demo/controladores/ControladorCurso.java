@@ -42,7 +42,7 @@ public class ControladorCurso {
                     .body(error.getMessage());
         }
     }
-    @GetMapping("{/id}")
+    @GetMapping("/{id}")
     public ResponseEntity<?> controladorBuscarPorId(@PathVariable Integer id){
         try{
             return ResponseEntity
